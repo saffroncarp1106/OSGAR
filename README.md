@@ -4,7 +4,7 @@
 
 The project was built around the **Elegoo Neptune 4 Max** and generates G-code intended for Klipper firmware. While it should work with other Klipper-based or Klipper-compatible printers, this has not been extensively tested.
 
-You need to edit your max printer speed for your `printer.cfg` file.
+You need to edit your max printer speed for your `printer.cfg` file. The Neptune can handle 600mm/s and 10000mm/s^2 from what I understand.
 
 The original goal of this project is to allow for extensive testing with drawing tablets.
 
