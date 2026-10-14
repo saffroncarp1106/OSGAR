@@ -1,0 +1,12 @@
+PySide6>=6.7
+
+# Only needed to talk to the solenoid key-presser board. OSGAR starts and runs
+# without it; the Solenoid Key Presser panel says so if it is missing.
+pyserial>=3.5
+
+# osu! replay cursor-delay analyzer (analyze.py)
+numpy>=1.24
+osrparse>=6.0
+rich>=13.0
+# Optional, only for --plot:
+# matplotlib>=3.7
