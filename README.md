@@ -14,9 +14,12 @@ This was comparing the pulling rate of stock 133hz compared to the flashed 1k po
 To Do: Compare Ctl-490.
 
 https://github.com/user-attachments/assets/3f4560cf-8e2d-4353-a79d-ccce73de0815
+
 ---
 
-Math used to save and log later.
+###Math used to save and log later.
+
+---
 
 ### 1. Extract XY coordinates
 
