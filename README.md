@@ -1,18 +1,20 @@
 
+### 0. Use and Application.
+---
+
 Example of it being compared to raw gameplay, and compared to what the parser had outputted. Clearly, not one to one, work to be improved in optimization.
 Yellow is raw gameplay, and Blue is .gcode output running in Osu! Lazer.
 
 https://github.com/user-attachments/assets/0f2c4392-2177-4e04-8eeb-399015de87d0
 
-
-
+---
 
 Example of use in real world, having the exact same .gcode file in simulated gameplay allowed this project to happen. 
 This was comparing the pulling rate of stock 133hz compared to the flashed 1k polling rate for the ctl-472.
 To Do: Compare Ctl-490.
 
 https://github.com/user-attachments/assets/3f4560cf-8e2d-4353-a79d-ccce73de0815
-
+---
 
 Math used to save and log later.
 
