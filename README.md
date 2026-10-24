@@ -1,5 +1,5 @@
 
-### 0. Use and Application.
+### 0. Use and Application
 ---
 
 Example of it being compared to raw gameplay, and compared to what the parser had outputted. Clearly, not one to one, work to be improved in optimization.
