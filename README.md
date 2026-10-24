@@ -1,4 +1,4 @@
-### OSGAR: .osr and svg .gcode generator.
+### OSGAR: .osr and .svg .gcode generator.
 
 The goal of the project was to originally have a svg gcode generator for pen plotting with the Neptune 4 Max, eventually adding a parser for .osr files. 
 To Do: 
