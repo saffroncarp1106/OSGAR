@@ -1,1 +1,89 @@
-I deleted my read me by accident :|
+
+Math used to save and log later.
+
+### 1. Extract XY coordinates
+
+**SVG:** Parse vector paths into coordinate points <i>(x<sub>i</sub>, y<sub>i</sub>)</i>. Curves may need to be sampled into smaller line segments.
+
+**OSR:** Parse recorded cursor positions and the time difference between replay frames.
+
+<div align="center">
+  <p><i>P<sub>i</sub> = (x<sub>i</sub>, y<sub>i</sub>, t<sub>i</sub>)</i></p>
+</div>
+
+---
+
+### 2. Scale coordinates to the machine
+
+Convert the original coordinate system to physical millimeters.
+
+<div align="center">
+  <p><i>X<sub>i</sub> = x<sub>i</sub> &times; (W<sub>machine</sub> / W<sub>source</sub>)</i></p>
+  <p><i>Y<sub>i</sub> = y<sub>i</sub> &times; (H<sub>machine</sub> / H<sub>source</sub>)</i></p>
+</div>
+
+For osu!, the standard playfield is 512 &times; 384.
+
+---
+
+### 3. Calculate travel distance
+
+Use the Euclidean distance between consecutive points:
+
+<div align="center">
+  <p><kbd><i>d<sub>i</sub> = &radic;((X<sub>i+1</sub> &minus; X<sub>i</sub>)<sup>2</sup> + (Y<sub>i+1</sub> &minus; Y<sub>i</sub>)<sup>2</sup>)</i></kbd></p>
+</div>
+
+This determines how far the machine must travel.
+
+---
+
+### 4. Calculate motion speed and time
+
+For an OSR replay, the timestamps specify the available movement time:
+
+<div align="center">
+  <p><i>&Delta;t<sub>i</sub> = (t<sub>i+1</sub> &minus; t<sub>i</sub>) / 1000</i></p>
+</div>
+
+Assuming timestamps are measured in milliseconds, the required average velocity is:
+
+<div align="center">
+  <p><kbd><i>v<sub>i</sub> = d<sub>i</sub> / &Delta;t<sub>i</sub></i></kbd></p>
+</div>
+
+Compare this with the maximum machine velocity:
+
+<div align="center">
+  <p><i>v<sub>i</sub> &le; v<sub>max</sub></i></p>
+</div>
+
+An SVG normally does not have replay timestamps, so movement timing instead depends on the chosen speed and motion constraints.
+
+For a simple constant-speed calculation:
+
+<div align="center">
+  <p><i>t<sub>i</sub> = d<sub>i</sub> / v<sub>i</sub></i></p>
+</div>
+
+---
+
+### 5. Account for acceleration
+
+Assuming each move starts and ends at rest, maximum acceleration is <i>a<sub>max</sub></i>:
+
+<div align="center">
+  <table>
+    <tr>
+      <td rowspan="2"><i>t<sub>min</sub></i> = </td>
+      <td>2&radic;(<i>d</i> / <i>a<sub>max</sub></i>),</td>
+      <td><i>d</i> &le; <i>v<sub>max</sub></i><sup>2</sup> / <i>a<sub>max</sub></i></td>
+    </tr>
+    <tr>
+      <td>(<i>d</i> / <i>v<sub>max</sub></i>) + (<i>v<sub>max</sub></i> / <i>a<sub>max</sub></i>),</td>
+      <td><i>d</i> &gt; <i>v<sub>max</sub></i><sup>2</sup> / <i>a<sub>max</sub></i></td>
+    </tr>
+  </table>
+</div>
+
+---
