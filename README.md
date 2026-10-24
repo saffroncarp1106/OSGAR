@@ -2,7 +2,7 @@
 ### 0. Use and Application
 ---
 
-Example of it being compared to raw gameplay, and compared to what the parser had outputted. Clearly, not one to one, work to be improved in optimization.
+Example of it being compared to raw gameplay, and compared to what the parser had outputted. Clearly, not one to one, room for improvement.
 Yellow is raw gameplay, and Blue is .gcode output running in Osu! Lazer.
 
 https://github.com/user-attachments/assets/0f2c4392-2177-4e04-8eeb-399015de87d0
