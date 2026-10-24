@@ -1,9 +1,11 @@
 
 Example of it being compared to raw gameplay, and compared to what the parser had outputted. Clearly, not one to one, work to be improved in optimization.
+
 https://github.com/user-attachments/assets/0f2c4392-2177-4e04-8eeb-399015de87d0
 
 
 Example of use in real world, having the exact same .gcode file in simulated gameplay allowed this project to happen. 
+
 https://github.com/user-attachments/assets/3f4560cf-8e2d-4353-a79d-ccce73de0815
 
 
